@@ -1,106 +1,62 @@
-# 🌐 Network Security Scanner
+# 🔍 Network Scanner
 
-A Python-based **network reconnaissance and risk analysis tool** that discovers devices on a local network, analyzes exposed services, and evaluates security risk based on open ports.
-
----
-
-## 🧠 Overview
-
-This tool performs automated network discovery and port scanning using **Nmap**, identifies active devices, and highlights potential security risks based on commonly exploited services (e.g., SMB, Telnet, RDP).
-
-It provides a **graphical interface** for real-time monitoring and stores scan results for later analysis.
+A Python-based Network Scanner with GUI using Tkinter and Nmap.
 
 ---
 
 ## 🚀 Features
-
-* 🔍 **Network Discovery**
-
-  * Detects all active devices on the local subnet
-  * Retrieves IP address, MAC address, and hostname
-
-* 🚪 **Port Scanning & Service Detection**
-
-  * Scans for commonly exploited ports (FTP, SSH, SMB, RDP, etc.)
-  * Identifies running services on each device
-
-* ⚠️ **Risk Scoring Engine**
-
-  * Assigns risk scores based on exposed ports
-  * Highlights high-risk services (Telnet, SMB, RDP)
-
-* 💾 **Persistent Storage**
-
-  * Stores scan results in SQLite database
-  * Tracks devices and previously detected vulnerabilities
-
-* 🖥️ **GUI Interface (Tkinter)**
-
-  * Interactive device list
-  * Detailed inspection panel
-  * Real-time scan progress
-
-* ⚡ **Multithreaded Scanning**
-
-  * Non-blocking UI during scans
+- Scan network for active devices
+- Detect IP addresses
+- Port scanning using Nmap
+- Simple GUI interface
+- User authentication system
 
 ---
 
-## 🛠️ Tech Stack
+## 🔐 Demo Credentials
 
-* **Python**
-* **Tkinter** (GUI)
-* **Nmap** (network scanning)
-* **SQLite** (data storage)
+| Username | Password |
+|----------|---------|
+| admin    | adminp  |
 
 ---
 
-## ⚙️ Setup & Usage
+## 📸 Screenshots
 
-### 1. Install Dependencies
+### Login Screen
+![Login](screenshots/login.png)
+
+### Scan Input
+![Scan Input](screenshots/scan_input.png)
+
+### Scan Results
+![Results](screenshots/results.png)
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### IP List
+![IP List](screenshots/ip_list.png)
+
+### Alert Popup
+![Alert](screenshots/alert.png)
+
+---
+
+## ⚙️ Setup & Run
 
 ```bash
-sudo apt install nmap
-pip install python-nmap
-```
+git clone https://github.com/Aashish-kumar77/Network-Scanner.git
+cd Network-Scanner
 
-### 2. Run the Application
+python3 -m venv venv
+source venv/bin/activate
 
-```bash
+pip install flask python-nmap
+sudo apt install nmap python3-tk -y
+
 python Network_Scanner.py
-```
 
-> ⚠️ Run with administrator/root privileges for accurate scanning.
+👨‍💻 Author
 
----
-
-## 🎯 Use Cases
-
-* 🛡️ Home / lab network security auditing
-* 🕵️ Identifying unknown devices on a network
-* 🔍 Detecting exposed or insecure services
-* 🎓 Cybersecurity learning and experimentation
-
----
-
-## ⚠️ Limitations
-
-* Does not perform deep vulnerability scanning (port-based analysis only)
-* Requires Nmap installed and proper permissions
-* Limited to local network scanning
-
----
-
-## 🚀 Future Improvements
-
-* [ ] Vulnerability detection (CVE mapping)
-* [ ] Real-time alerts for high-risk devices
-* [ ] Integration with OSINT tools (IntelGraph)
-* [ ] Export reports (PDF/JSON)
-* [ ] Improved authentication (bcrypt + roles)
-
----
-
-## 👨‍💻 Author
-
-**Aashish Kumar**
+Aashish Kumar
